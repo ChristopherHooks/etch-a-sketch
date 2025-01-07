@@ -1,7 +1,3 @@
-const container = document.querySelector('#container');
-
-
-
 function createBox() {
     let div = document.createElement('div');
     div.style.height = "60px";
@@ -9,6 +5,22 @@ function createBox() {
     div.classList.add("box");
     container.append(div);
 }
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function getRandomRGB() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+const container = document.querySelector('#container');
 
 for (let i = 0; i < 256; i++) {
     createBox();
@@ -22,11 +34,6 @@ boxes.forEach((box) => {
     )
 })
 
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
 
 const btn = document.querySelector("#btn");
 btn.addEventListener("click", () => {
@@ -49,7 +56,7 @@ btn.addEventListener("click", () => {
     const boxes = document.querySelectorAll('.box');
     boxes.forEach((box) => {
         box.addEventListener("mouseover", (event) => {
-            box.style.backgroundColor = 'black';
+            box.style.backgroundColor = getRandomRGB();
         }
         )
     })
