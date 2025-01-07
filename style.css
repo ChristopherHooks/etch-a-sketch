@@ -7,8 +7,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    ;
 }
 
 #container {
@@ -18,16 +16,13 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 
 .box {
     background-color: rgb(182, 182, 182);
 }
 
-
 #btn {
     width: 150PX;
     margin: 24px 0 24px 0;
-
 }
